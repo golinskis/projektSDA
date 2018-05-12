@@ -6,9 +6,6 @@ login:
   controller:  App\Controller\LoginController::login
 comment:
   path: /comments
-  controller: App\Controlller\CommentController::showComment
-addComment:
-  path: /newComment
   controller: App\Controller\CommentController::addComment
 newUser:
   path: /new/User
