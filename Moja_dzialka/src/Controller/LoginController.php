@@ -17,7 +17,7 @@ class LoginController extends Controller
      */
     public function showUserDetails()
     {
-        return $this->render('user/show-user-details.html.twig', [
+        return $this->render('user/show-user.html.twig', [
             'controller_name' => 'UserController',
         ]);
     }
@@ -55,6 +55,6 @@ class LoginController extends Controller
 
 
 
-      
+
     }
 }
