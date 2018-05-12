@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommentRepository")
  */
-class Comment
+class CommentEntity
 {
     /**
      * @ORM\Id()
@@ -27,7 +27,7 @@ class Comment
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="comment")
+     * @ORM\ManyToOne(targetEntity="App\Entity\UserEntity", inversedBy="comment")
      */
     private $relation;
 
@@ -60,12 +60,12 @@ class Comment
         return $this;
     }
 
-    public function getRelation(): ?User
+    public function getRelation(): ?UserEntity
     {
         return $this->relation;
     }
 
-    public function setRelation(?User $relation): self
+    public function setRelation(?UserEntity $relation): self
     {
         $this->relation = $relation;
 

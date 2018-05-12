@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class UserEntity
 {
     /**
      * @ORM\Id()
@@ -34,7 +34,7 @@ class User
     private $password;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="relation")
+     * @ORM\OneToMany(targetEntity="App\Entity\CommentEntity", mappedBy="relation")
      */
     private $comment;
 
@@ -85,14 +85,14 @@ class User
     }
 
     /**
-     * @return Collection|Comment[]
+     * @return Collection|CommentEntity[]
      */
     public function getComment(): Collection
     {
         return $this->comment;
     }
 
-    public function addComment(Comment $comment): self
+    public function addComment(CommentEntity $comment): self
     {
         if (!$this->comment->contains($comment)) {
             $this->comment[] = $comment;
@@ -102,7 +102,7 @@ class User
         return $this;
     }
 
-    public function removeComment(Comment $comment): self
+    public function removeComment(CommentEntity $comment): self
     {
         if ($this->comment->contains($comment)) {
             $this->comment->removeElement($comment);
