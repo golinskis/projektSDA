@@ -4,6 +4,9 @@ index:
 login:
   path: /login
   controller:  App\Controller\LoginController::login
+logout:
+  path: /logout
+  controller: App\Controller\LoginController::logout
 comment:
   path: /comments
   controller: App\Controller\CommentController::addComment
