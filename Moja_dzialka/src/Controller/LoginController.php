@@ -15,7 +15,12 @@ class LoginController extends Controller
     /**
      * @Route("/user", name="user")
      */
-
+    public function showUserDetails()
+    {
+        return $this->render('user/show-user-details.html.twig', [
+            'controller_name' => 'UserController',
+        ]);
+    }
     public function login()
     {
         return $this->render('user/login.html.twig', [
@@ -50,6 +55,6 @@ class LoginController extends Controller
 
 
 
-
+      
     }
 }
