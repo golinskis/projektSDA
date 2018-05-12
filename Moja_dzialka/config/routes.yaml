@@ -1,3 +1,3 @@
 login:
-   path: /
+   path: /login
    controller: App\Controller\LoginController::login
