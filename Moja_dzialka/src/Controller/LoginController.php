@@ -15,18 +15,26 @@ class LoginController extends Controller
     /**
      * @Route("/user", name="user")
      */
-    public function showUserDetails()
+    public function showUserProfile()
     {
+        $users = $this->getDoctrine()->getRepository(UserEntity::class)->findAll();
         return $this->render('user/show-user.html.twig', [
-            'controller_name' => 'UserController',
+            'controller_name' => 'LoginController',
+            'users' => $users,
         ]);
     }
+
+
+
+
     public function login()
     {
         return $this->render('login/login.html.twig', [
-            'controller_name' => 'UserController',
+            'controller_name' => 'LoginController',
         ]);
     }
+
+
 
     public function addUser(Request $request)
     {
@@ -49,7 +57,7 @@ class LoginController extends Controller
         }
 
         return $this->render('user/new.html.twig',[
-            'controller_name' => 'UserController',
+            'controller_name' => 'LoginController',
             'form' => $form->createView(),
         ]);
 
