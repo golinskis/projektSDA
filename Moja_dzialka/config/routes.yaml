@@ -15,4 +15,4 @@ newUser:
   controller: App\Controller\LoginController::addUser
 profile:
   path: /profile
-  controller: App\Controller\LoginController::showUserDetails
+  controller: App\Controller\LoginController::showUserProfile
