@@ -8,9 +8,10 @@ security:
                     szym:
                         password: szym123
                         roles: 'ROLE_ADMIN'
-                    szym_user:
-                        password: szym1
-                        roles: 'ROLE_USER'
+                    alex:
+                        password: alex123
+                        roles: 'ROLE_ADMIN'
+                    
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
