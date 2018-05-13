@@ -18,9 +18,12 @@ class CommentController extends Controller
      */
     public function showComments()
     {
+
+        $comment  = $this->getDoctrine()->getRepository(CommentEntity::class)->findAll();
         return $this->render('comment/index.html.twig', [
             'controller_name' => 'CommentController',
-        ]);
+            'comment' => $comment
+         ]);
     }
     public function addComment(Request $request)
     {
