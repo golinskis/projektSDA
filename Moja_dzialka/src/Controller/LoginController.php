@@ -15,16 +15,16 @@ class LoginController extends Controller
     /**
      * @Route("/user", name="user")
      */
-    public function showUserDetails()
+    public function showUserProfile()
     {
-        return $this->render('user/show-user.html.twig', [
-            'controller_name' => 'UserController',
+        return $this->render('user/show-user-details.html.twig', [
+            'controller_name' => 'LoginController',
         ]);
     }
     public function login()
     {
         return $this->render('login/login.html.twig', [
-            'controller_name' => 'UserController',
+            'controller_name' => 'LoginController',
         ]);
     }
 
@@ -49,7 +49,7 @@ class LoginController extends Controller
         }
 
         return $this->render('user/new.html.twig',[
-            'controller_name' => 'UserController',
+            'controller_name' => 'LoginController',
             'form' => $form->createView(),
         ]);
 
