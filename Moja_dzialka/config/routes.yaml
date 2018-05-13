@@ -1,15 +1,18 @@
 index:
-  path: /
-  controller: App\Controller\IndexController::index
+   path: /
+   controller: App\Controller\IndexController::index
 login:
-  path: /login
-  controller:  App\Controller\LoginController::login
+   path: /login
+   controller:  App\Controller\LoginController::login
+logout:
+   path: /logout
+   controller: App\Controller\LoginController::logout
 comment:
-  path: /comments
-  controller: App\Controller\CommentController::addComment
+   path: /comments
+   controller: App\Controller\CommentController::addComment
 newUser:
   path: /new/User
   controller: App\Controller\LoginController::addUser
-users:
-  path: /users
+profile:
+  path: /profile
   controller: App\Controller\LoginController::showUserDetails
