@@ -2,6 +2,10 @@
 
 {% block header %} Komentarze do posta {% endblock %}
 
-{% block body %}
-
-{% endblock %}
+    {% block body %}
+        <ul>
+            {% for comment in comments %}
+                <li> {{ comment.user }} {{ comment.text }}</li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
