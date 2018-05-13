@@ -16,7 +16,7 @@ class CommentController extends Controller
     /**
      * @Route("/comment", name="comment")
      */
-    public function index()
+    public function showComments()
     {
         return $this->render('comment/index.html.twig', [
             'controller_name' => 'CommentController',
