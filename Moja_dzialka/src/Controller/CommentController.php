@@ -16,7 +16,7 @@ class CommentController extends Controller
     /**
      * @Route("/comment", name="comment")
      */
-    public function index()
+    public function showComments()
     {
         return $this->render('comment/index.html.twig', [
             'controller_name' => 'CommentController',
@@ -25,7 +25,7 @@ class CommentController extends Controller
     public function addComment(Request $request)
     {
         $comment = new CommentEntity();
-        $form = $this->createFormBuilder($comment)->add('content', TextType::class)
+        $form = $this->createFormBuilder($comment)->add('text', TextType::class)
             ->add('user', EntityType::class, [
                 'class' => UserEntity::class,
             ])

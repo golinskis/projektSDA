@@ -9,6 +9,9 @@ logout:
    controller: App\Controller\LoginController::logout
 comment:
    path: /comments
+   controller: App\Controller\CommentController::showComments
+newComment:
+   path: /new/comment
    controller: App\Controller\CommentController::addComment
 newUser:
   path: /new/user
