@@ -11,8 +11,8 @@ comment:
    path: /comments
    controller: App\Controller\CommentController::addComment
 newUser:
-   path: /new/User
-   controller: App\Controller\LoginController::addUser
+  path: /new/User
+  controller: App\Controller\LoginController::addUser
 profile:
-   path: /profile
-   controller: App\Controller\LoginController::showUserProfile
+  path: /profile
+  controller: App\Controller\LoginController::showUserDetails

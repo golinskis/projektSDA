@@ -17,10 +17,16 @@ class LoginController extends Controller
      */
     public function showUserProfile()
     {
-        return $this->render('user/show-user-details.html.twig', [
+        $users = $this->getDoctrine()->getRepository(UserEntity::class)->findAll();
+        return $this->render('user/show-user.html.twig', [
             'controller_name' => 'LoginController',
+            'users' => $users,
         ]);
     }
+
+
+
+
     public function login()
     {
         return $this->render('login/login.html.twig', [
@@ -28,12 +34,14 @@ class LoginController extends Controller
         ]);
     }
 
+
+
     public function addUser(Request $request)
     {
 
         $user = new UserEntity();
         $form = $this->createFormBuilder($user)
-            ->add('login',TextType::class)
+            ->add('name',TextType::class)
             ->add('email',EmailType::class)
             ->add('password',PasswordType::class)
             ->add('send',SubmitType::class)

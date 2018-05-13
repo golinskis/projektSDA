@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    Dzień Dobry!
+{% endblock %}
+
+{% block body %}
+    {{  controller_name }}
+    <ul>
+        {% for user in users %}
+            <li>{{ user.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
