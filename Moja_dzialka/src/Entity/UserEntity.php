@@ -114,4 +114,8 @@ class UserEntity
 
         return $this;
     }
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
