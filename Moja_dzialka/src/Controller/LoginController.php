@@ -33,7 +33,7 @@ class LoginController extends Controller
 
         $user = new UserEntity();
         $form = $this->createFormBuilder($user)
-            ->add('login',TextType::class)
+            ->add('name',TextType::class)
             ->add('email',EmailType::class)
             ->add('password',PasswordType::class)
             ->add('send',SubmitType::class)
