@@ -1,5 +1,5 @@
 index:
-    path: /
+   path: /
    controller: App\Controller\IndexController::index
 login:
    path: /login
@@ -12,7 +12,7 @@ comment:
    controller: App\Controller\CommentController::addComment
 newUser:
    path: /new/User
-   controller: App\Controller\UserController::addUser
+   controller: App\Controller\LoginController::addUser
 profile:
    path: /profile
-   controller: App\Controller\UserController::profile
+   controller: App\Controller\LoginController::showUserProfile
