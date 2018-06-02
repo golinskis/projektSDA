@@ -31,6 +31,12 @@ class CommentEntity
      */
     private $relation;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\PostEntity", inversedBy="comment")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $yes;
+
     public function getId()
     {
         return $this->id;
@@ -68,6 +74,18 @@ class CommentEntity
     public function setRelation(?UserEntity $relation): self
     {
         $this->relation = $relation;
+
+        return $this;
+    }
+
+    public function getYes(): ?PostEntity
+    {
+        return $this->yes;
+    }
+
+    public function setYes(?PostEntity $yes): self
+    {
+        $this->yes = $yes;
 
         return $this;
     }

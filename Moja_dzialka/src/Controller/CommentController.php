@@ -29,7 +29,7 @@ class CommentController extends Controller
     {
         $comment = new CommentEntity();
         $form = $this->createFormBuilder($comment)->add('text', TextType::class)
-            ->add('user', EntityType::class, [
+            ->add('comment', EntityType::class, [
                 'class' => UserEntity::class,
             ])
             ->add('save', SubmitType::class)->getForm();
