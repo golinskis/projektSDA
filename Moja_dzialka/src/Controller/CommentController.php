@@ -40,7 +40,7 @@ class CommentController extends Controller
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($comment);
             $entityManager->flush();
-            return $this->redirectToRoute('index');
+            return $this->redirectToRoute('comment');
 
         }
 
