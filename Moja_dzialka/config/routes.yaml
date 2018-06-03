@@ -19,3 +19,9 @@ newUser:
 profile:
   path: /profile
   controller: App\Controller\LoginController::showUserProfile
+posts:
+  path: /posts
+  controller: App\Controller\PostController::showPosts
+AddPosts:
+  path: /addpost
+  controller: App\Controller\PostController::addPost

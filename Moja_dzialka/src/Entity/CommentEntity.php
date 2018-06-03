@@ -17,19 +17,21 @@ class CommentEntity
     private $id;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text", nullable=false)
      */
     private $text;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $user;
+    private $data;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\UserEntity", inversedBy="comment")
      */
-    private $relation;
+    private $user;
+
+
 
     public function getId()
     {
@@ -48,27 +50,45 @@ class CommentEntity
         return $this;
     }
 
-    public function getUser(): ?string
+    public function getData(): ?string
+    {
+        return $this->data;
+    }
+
+    public function setData(string $data): self
+    {
+        $this->data = $data;
+
+        return $this;
+    }
+
+    public function getUser(): ?UserEntity
     {
         return $this->user;
     }
 
-    public function setUser(string $user): self
+    public function setUser(?UserEntity $user): self
     {
         $this->user = $user;
 
         return $this;
     }
 
-    public function getRelation(): ?UserEntity
+    public function getYes(): ?PostEntity
     {
-        return $this->relation;
+        return $this->yes;
     }
 
-    public function setRelation(?UserEntity $relation): self
+    public function setYes(?PostEntity $yes): self
     {
-        $this->relation = $relation;
+        $this->yes = $yes;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->text;
     }
 }

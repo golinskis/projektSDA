@@ -31,8 +31,7 @@ class CommentController extends Controller
         $form = $this->createFormBuilder($comment)->add('text', TextType::class)
             ->add('user', EntityType::class, [
                 'class' => UserEntity::class,
-            ])
-            ->add('save', SubmitType::class)->getForm();
+            ])->add('data', TextType::class) ->add('save', SubmitType::class)->getForm();
 
         $form->handleRequest($request);
 
