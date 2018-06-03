@@ -11,25 +11,22 @@
     </style>
 
     <div class="row">
-        <div class="col-sm-4">
-
-            <ul>
-
+        
                 {% for post in posts %}
 
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="card" style="width: 22rem;">
                             <div class="card-body">
-                                <h5 class="card-title">{{ post.getContent }} </h5>
-                                <p class="card-text">{{ post.getTitle }}</p>
+                                <h5 class="card-text">{{ post.getTitle }}</h5>
+                                <p class="card-title">{{ post.getContent }} </p>
                                 <a href="http://127.0.0.1:8000/new/comment" class="btn">Dodaj komentarz</a>
                                 <a href="http://127.0.0.1:8000/comments" class="btn">Pokaż komentarze</a>
-                            </div></div></div>
+                            </div>
+                        </div>
+                    </div>
 
                 {% endfor %}
-
-            </ul>
-        </div>
+        
 
     </div>
 {% endblock %}
