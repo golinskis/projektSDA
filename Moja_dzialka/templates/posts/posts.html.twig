@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Dodaj Post{% endblock %}
-{% block body %}
+{% block header %} Dodaj Post {% endblock %}
 
-    {{ form_start(form) }}
+{% block body %}
+    {{ form_start(form)}}
     {{ form_widget(form) }}
     {{ form_end(form) }}
-
 {% endblock %}

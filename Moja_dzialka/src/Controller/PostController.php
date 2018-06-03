@@ -30,7 +30,7 @@ class PostController extends Controller
     {
 
         $post = $this->getDoctrine()->getRepository(PostEntity::class)->findAll();
-        return $this->render('posts/index.html.twig', [
+        return $this->render('posts/showPosts.html.twig', [
             'controller_name' => 'PostController',
             'posts' => $post,
         ]);
@@ -38,13 +38,8 @@ class PostController extends Controller
     public function addPost(Request $request)
     {
         $posts = new PostEntity();
-        $form = $this->createFormBuilder($posts)->add('comment', TextType::class)
-            ->add('content', EntityType::class, [
-                'class' => PostEntity::class,
-            ])->add('title', EntityType::class, [
-                'class' => PostEntity::class,
-            ])
-            ->add('save', SubmitType::class)->getForm();
+        $form = $this->createFormBuilder($posts)->add('title', TextType::class)
+            ->add('content', TextType::class)->add('save', SubmitType::class)->getForm();
 
         $form->handleRequest($request);
 

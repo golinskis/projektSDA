@@ -16,22 +16,22 @@ class PostEntity
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    public $id;
+    private $id;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\CommentEntity", mappedBy="yes")
      */
-    public $comment;
+    private $comment;
 
     /**
      * @ORM\Column(type="text")
      */
-    public $title;
+    private $title;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    public $content;
+    private $content;
 
     public function __construct()
     {
